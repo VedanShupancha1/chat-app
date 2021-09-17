@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+    height: 100vh;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+
+    font-family: sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-center {
+    display: flex;
+}
+
+.writer {
+    flex: 1;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 10rem;
+    padding: .5rem 1rem;
+}
+
+.send {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+}
+
+.chats {
+    display: flex;
+    flex-direction: column;
+}
+
+.chats>* {
+    margin-bottom: 2rem;
+}
+
+.message {
+    position: relative;
+    width: 70%;
+    padding: 1rem 2rem;
+    background-color: whitesmoke;
+    border-radius: .5rem;
+    animation: fadeIn .5s;
+}
+
+.message--right {
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.message--left {
+    border-bottom-left-radius: 0;
+    background-color: #3ee6cf;
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    bottom: -1rem;
+    right: 0;
+    background-color: inherit;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%);
+}
+
+.message--left::after {
+    left: 0;
+    clip-path: polygon(0 100%, 0 0, 100% 0, 0 100%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
